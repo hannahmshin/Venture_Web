@@ -1,0 +1,64 @@
+<!-- create create page -->
+
+{% extends "tourguide/create_tour_base.html" %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+{% block content2 %}
+<!-- I think I can loop form so I don't have to create this stuff -->
+<form method='post' action='' enctype='multipart/form-data'> {% csrf_token %} {% load widget_tweaks %}
+    
+    <label for='title'>Title of your tour</label>
+    {% render_field form.title placeholder='title' class+="form-control"%}
+    <hr>
+    <label for='country'>Country</label>
+    {% render_field form.country placeholder='country' class+="form-control"%}<br>
+
+    <label for='state'>State</label>
+    {% render_field form.state placeholder='state' class+="form-control"%}<br>
+
+    <label for='cityname'>City name</label>
+    {% render_field form.cityname placeholder='city name' class+="form-control"%}<br>
+    <hr>
+
+    <label for='tour_theme'>Theme of your tour</label>
+    {% render_field form.tour_theme  class+="form-control"%}<br>
+
+    <label for='capacity'>Up to how many people can you accomodate?</label>
+    {% render_field form.capacity class+="form-control"%}<br>
+
+    <label for='tour_intensity'>How physically intensive is your tour? (sandals = not physical, Hiking shoes = demanding)</label>
+    {% render_field form.tour_intensity class+="form-control"%}<br>
+
+    <label for='image'>Upload main image</label>
+    {% render_field form.image  class+="form-control"%}<br>
+
+    <label for='image_dsc'>In less than 100 words, tell us about the tour</label>
+    {% render_field form.content class+="form-control" %}
+
+    <label for='description'>Tell people about your tour</label>
+    {% render_field form.description placeholder='Tell me about your tour!' class+="form-control"%}<br>
+    
+    
+    <input class='btn btn-block btn-primary' type="submit" value="Save"/>
+    <a class='btn btn-block btn-primary' href="/tourist/create/create_tours/stop1">Next step</a>
+</form>
+             
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,52 @@
+/*for tourguide_base.html*/
+.navbar {
+	background: rgba(255,255,255,0.4);
+}
+.navbar a:hover{
+	background: rgba(0,0,0,0.4) !important;
+}
+.navbar a:active{
+	background: rgba(0,0,0,0.4) !important;
+}
+body {
+	padding-top: 0px;
+	height: 100%;
+}
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  margin: 0 auto -60px;
+  padding: 0 0 60px;
+}
+.footer {
+	height: 60px;
+	position: absolute;
+	background: rgba(53,53,53,1);
+	width: 100%;
+}
+.navFooter {
+	text-align: center;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+.navFooter li {
+	display: inline;
+}
+
+/*for main.html*/
+.aboutSection {
+	height: 450px;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.infoBox {
+	background: rgba(255,255,255,0.4);
+	height: 200px;
+	width: 600px;
+	padding: 15px;
+}
+
+/*for login modal*/
+#loginModal {
+}

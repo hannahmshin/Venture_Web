@@ -1,0 +1,64 @@
+<!-- create_tour_base template -->
+{% extends "tourguide/create.html" %}
+{% block content %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<!-- need to put below code in base -->
+<style>
+.list-group-horizontal .list-group-item {
+    display: inline-block;
+}
+.list-group-horizontal .list-group-item {
+    margin-bottom: 0;
+    margin-left:-4px;
+    margin-right: 0;
+}
+.list-group-horizontal .list-group-item:first-child {
+    border-top-right-radius:0;
+    border-bottom-left-radius:4px;
+}
+.list-group-horizontal .list-group-item:last-child {
+    border-top-right-radius:4px;
+    border-bottom-left-radius:0;
+} 
+
+/*.btn {
+    margin: 10px;
+}*/
+
+</style>
+
+<!-- clear the session when clear_btn is pressed -->
+<script>
+
+
+//If button is clicked, this function loads django view function that clears every session
+$(document).ready(function() {
+
+    $("#clear_btn").click(function(event) {
+        alert("Current form is cleared. Refresh to see the changes.");
+        //When button is clicked clear the form
+        $.get('/tourist/create/clear_form/',function(){
+        });
+    });
+});
+</script>
+
+
+
+<div class="list-group-horizontal">
+    <a href='/tourist/create/create_tours/inprogress' class="list-group-item active">In progress</a>
+    <a href="/tourist/create/create_tours/" class="list-group-item">Basic Information</a>
+    <a href="/tourist/create/create_tours/stop1/" class="list-group-item">Stop1</a>
+    <a href="/tourist/create/create_tours/stop2/" class="list-group-item">Stop2</a>
+    <a href="/tourist/create/create_tours/stop3/" class="list-group-item">Stop3</a>
+    <a href="/tourist/create/create_tours/review/" class="list-group-item">Review</a>
+    <a id="clear_btn" class="btn btn-danger" style= "margin-left:25px">Clear the form</a>
+    
+</div> 
+
+
+<br>
+<!-- here load image 1 and content 1 -->
+{% block content2 %} {% endblock %}
+{% endblock %}
+

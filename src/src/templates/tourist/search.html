@@ -1,0 +1,30 @@
+<!-- search -->
+{% extends "tourist/tourguide_base.html" %}
+{% block body_block %}
+<div class='col-sm-3 col-sm-offset-2'>
+<form method='GET' action=''>
+    <input type='text' name='q' placeholder='search cities' value='{{ request.GET.q }}'/>
+    <input type='submit' value='search' />
+</form>
+</div>
+
+<!-- displaying search result -->
+{% for obj in object_list %}
+  <div class="col-sm-12">
+    <div class="thumbnail">
+        {% if obj.image %}
+        <img src='{{ obj.image.url }}' />
+        {% endif %}
+        <div class="caption">
+        <h3>{{obj.title}}</a> </h3>
+
+        <p>{{obj.content|linebreaks|truncatechars:120}} <br></p>
+        <p><a href="#nothing" class="btn btn-primary" role="button">Edit</a></p>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+
+ 
+
+{% endblock %}

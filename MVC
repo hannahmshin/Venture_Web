@@ -1,0 +1,28 @@
+
+WHAT TO WORK ON
+
+July 25th
+1. Maybe add a line "Currently editing: {{ title of tour that is being edited }}" ->create_tour
+    and "Currenting creating a new tour"
+2. Need to change account url -> it says it is profile, and functions are also called profile
+3. I downloaded django-bootstrap3 -> to solve account thing
+4. Learn how to do inserting background image
+5. Find a better way to refresh so it gets rid of things from form 
+
+
+Long term goals
+
+1. Design and how to create graphs etc on website
+2. Think about how we are going to create graphics for our logo, background, and etc
+3. Learn how to separate forms across the page (for creating tour page)
+
+
+
+Check out this website, and copy their HTML template
+
+1. https://trakt.tv (Navigation Bar)
+2. http://threedaysgrace.com (Navigation Bar)
+3. http://www.creanet.es (Maybe for our first home page)
+4. https://www.nanamee.com (Navigation Bar)
+
+

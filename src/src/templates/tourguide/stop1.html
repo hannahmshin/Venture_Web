@@ -1,0 +1,20 @@
+<!-- html template for stop1 -->
+{% extends "tourguide/create_tour_base.html" %}
+{% block content2 %}
+
+
+<form method="post" action="." enctype='multipart/form-data'> {% csrf_token %} {% load widget_tweaks %}
+    <h2>Stop 1 </h2>
+    <div class = 'form-group'>
+        
+        <label for="image1">Upload an image of first stop</label>
+        {% render_field form.image  class+="form-control"%} <br>
+        <label for='description'>Tell people about your first stop</label>
+        {% render_field form.content placeholder='Tell people about your tour stop1' class+="form-control"%} <br>
+        <input class='btn btn-block btn-primary' type="submit" value="Save"/>
+        <a class='btn btn-block btn-primary' href="/tourist/create/create_tours/stop2/">Next step</a>
+    </div>
+</form>
+
+
+{% endblock %}

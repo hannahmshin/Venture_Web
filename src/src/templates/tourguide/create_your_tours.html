@@ -1,0 +1,47 @@
+<!-- create _ yourtours -->
+{% extends "tourguide/create.html" %}
+{% load urllify %}
+{% block content %}
+
+
+{% if tour_exists %}
+<div class='panel panel-default'>
+<div class='panel-heading'><h4><strong>Your current tours<h4></strong></div>
+<div class='panel-body'>
+{% for obj in object_list %}
+<!-- Need to fix so eveyrthing is aligned and well represented -->
+
+    <div class='col-sm-6'>
+        <div class="thumbnail">
+            <center><h3>{{obj.title}}</a></h3></center>
+            {% if obj.image %}
+            <img src='{{ obj.image.url }}' class="img-responsive" alt="Cinque Terre" width="200" height="200"/>
+            {% endif %}
+
+            <div class="caption">
+            <center><p>{{obj.content|linebreaks|truncatechars:120}} <br></p></center>
+            <center>
+            <p><a href='{{obj.get_absoulte_url}}' class="btn btn-primary" role='button'>View</a>
+            <a href='{{obj.slug|get_delete_url}}' class='btn btn-danger' role='button'>Delete</a>
+            <a href='{{obj.slug|get_edit_url}}' class="btn btn-success" role="button">Edit</a></p>
+            </center>
+            </div>
+       
+    </div>
+        </div>
+  
+{% endfor %}
+</div>
+</div>
+</div>
+
+
+<!-- if user has not created any tours yet -->
+{% else %}
+<div class='panel panel-default'>
+    <div class='panel-heading'>You have not created any tours yet <a class="label label-primary" href="/tourist/create/create_tours/">Create new tour</a></div>
+    </div>
+</div>
+</div>
+{% endif %}
+{% endblock %}

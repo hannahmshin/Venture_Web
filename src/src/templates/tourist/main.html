@@ -1,0 +1,55 @@
+<!-- main.html for tourist and in general -->
+{% extends "tourist/tourguide_base.html" %}
+{% block body_block %}
+
+<!-- This is homepage when the user is not logged in -->
+
+<div>
+    <div class='aboutSection' style="background-image:url(../static/images/kc.jpg)">
+        <div class='container'>
+            <div class='col-sm-5' style="padding-top: 50px">
+                <h1>Go everywhere you want <br>
+                <small>Don't worry about what is there, <br> just choose who will guide your tour </small> </h1>
+            </div>
+        </div>
+    </div>
+
+    <div class='aboutSection' style="background-image:url(../static/images/elephant.jpg)" >
+        <div class='container'>
+            <div class='col-md-7'>
+                <div class='infoBox'>
+                    <h2>Never heard of Bucheon, South Korea?</h2>
+                    <h3>Tripadvisor can't give you a tour of Bucheon, South Korea. But these local people can! </h3>
+                    <h3><a class='btn btn-primary btn-lg' href="#signup" role='button'>Sign up</a></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class='aboutSection' style="background-image:url(../static/images/kc.jpg)" >
+        <div class='container'>
+            <div class='col-md-7'>
+                <div class='infoBox'>
+                    <h2>Want to make friends?</h2>
+                    <h3>If you are using Tinder to make friends, stop. Meet real people who wants to be your friends</h3>
+                    <h3><a class='btn btn-primary btn-lg' href="#signup" role='button'>Sign up</a></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class='aboutSection' style="background-image:url(../static/images/elephant.jpg)" >
+        <div class='container'>
+            <div class='col-md-7'>
+                <div class='infoBox'>
+                    <h2>Are you interested in sports? Art? History?</h2>
+                    <h3>Receive a customizable tour from local people from all around the world!</h3>
+                    <h3><a class='btn btn-primary btn-lg' href="#signup" role='button'>Sign up</a></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

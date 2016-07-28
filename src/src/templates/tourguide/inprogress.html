@@ -1,0 +1,56 @@
+<!-- Inprogress.html -->
+{% extends "tourguide/create_tour_base.html" %}
+{% load urllify %}
+{% block content2 %}
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+
+
+//If button is clicked, this function loads django view function that clears every session
+$(document).ready(function() {
+
+    $("#create_new").click(function(event) {
+        alert("Original form has been refreshed. Please refresh before you start creating a new tour");
+        //When button is clicked clear the form
+        $.get('/tourist/create/clear_form/',function(){
+        });
+    });
+});
+</script>
+
+
+
+<div class='panel panel-default'>
+    <div class='panel-heading'><h4>Finish creating your tours or <a id="create_new" class="label label-primary" href="/tourist/create/create_tours/">Create new tour</h4></a></div>
+        <div class='panel-body'> 
+        <div class='col-sm-8'>
+
+            {% if tour_exists %}
+            {% for obj in objects%}
+            <!-- loop through each user's drafts and display as ul -->
+            {% if obj.draft %}
+
+                <div class="list-group-item" ><h4>{{obj.title}}</h4>
+
+                <!-- maybe add some authentication things here -->
+                <a href='{{obj.slug|get_delete_url}}'id='{{ obj.id }}'class='btn btn-small btn-danger' href=>Delete</a>
+
+                <a href='{{obj.slug|get_edit_url}}' class='btn btn-small btn-success'>Edit</a> </div>
+
+                <div class="progress">
+                <div class="progress-bar progress-bar-striped progress-animated" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{obj.progress}}">
+                <span class="sr-only">40% Complete (success)</span>
+                </div>
+                </div>
+            {% endif %}
+            {% endfor %}
+
+            {% else %}<strong>
+            You have no current tours in progress </strong></div>
+            {% endif %}
+    </div>
+</div>
+</div>
+{% endblock %}

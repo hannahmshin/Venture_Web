@@ -1,0 +1,29 @@
+{% extends "tourist/tourguide_base.html" %}
+{% block body_block %}
+
+<div class="container-fluid">
+    <row>
+        <div class='col-sm-4 col-sm-offset-4'> 
+            <center>
+            <h1>Log in on Venture</h1> <br>
+            </center>
+                <form method="post" action="."> {% csrf_token %} {% load widget_tweaks %}
+                    <div class = 'form-group'>
+                        {% render_field form.username placeholder='Your username' class+="form-control"%} <br>
+                        {% render_field form.password placeholder='Your password' class+="form-control"%} <br>
+                        <input class='btn btn-block btn-primary' type="submit" value="Log in"/>
+                    </div>
+                </form>
+        </div>
+    </div>
+
+<hr/>
+
+<div class='row'>
+    <div class='col-sm-4 col-sm-offset-4 text-align-center'>
+        
+        <p>New to Venture? <a href="{% url 'registration_register'  %}">Sign up here</a></p>
+    </div>
+</div>
+
+{% endblock %}

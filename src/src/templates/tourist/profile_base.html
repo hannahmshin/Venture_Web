@@ -1,0 +1,35 @@
+<!-- profile.html -->
+{% extends "tourist/tourguide_base.html" %}
+{% block body_block %}
+
+<div class="container-fluid" style="padding-top:30px;">
+    
+    <div class='col-sm-3 col-sm-offset-1'>
+        <!-- This is going to be a panel for profile -->
+        <div class='dashboard'>
+            <div class='panel panel-default'>
+                <div class='panel-heading'> Welcome back <strong>{{ current_user }}</strong> </div>
+                <div class='panel-body'> Insert user image here </div>
+            </div>
+
+                
+            <div class="list-group">
+                <a href="/tourist/profile/" class="list-group-item active">Edit your profile</a>
+                
+                <a href="{% url 'auth_logout' %}?next=/tourist/" class="list-group-item">Log out</a>
+            </div>
+
+            <div class='panel panel-default'>
+                <div class='panel-body'> What kind of information could come here? </div>
+            </div>
+        </div>
+    </div>
+
+    <div class='col-sm-6'>
+        {% block content %}{% endblock %}
+    </div>
+</div>
+
+
+
+{% endblock %}

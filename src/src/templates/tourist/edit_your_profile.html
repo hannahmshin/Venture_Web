@@ -1,0 +1,33 @@
+<!-- edit your profile template -->
+{% extends "tourist/profile_base.html" %}
+{% load bootstrap3 %}
+{% block content %}
+<div class='panel panel-default'>
+    <div class='panel-heading'>Account: update your basic profile</div>
+    <div class='panel-body'> 
+
+    <div class='col-sm-8 col-sm-offset-2'>
+    <form method='post' action='' enctype='multipart/form-data'> {% csrf_token %} {% load widget_tweaks %}
+
+        
+        <label for='firstname'>First name</label>
+        {% render_field form.first_name placeholder='first name' class+="form-control"%} <br>
+
+        <label for='lastname'>Last name</label>
+        {% render_field form.last_name placeholder='last name' class+="form-control"%} <br>
+
+        <label for='lastname'>Last name</label>
+        {% render_field form.email placeholder='last name' class+="form-control"%} <br>
+        {% bootstrap_formset formset exclude='DELETE' %}
+        
+        
+        <input class='btn btn-block btn-primary' type="submit" value="Save changes"/>
+        
+    </form>
+    </div>
+</div>
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,36 @@
+<!-- review html template -->
+{% extends "tourguide/create_tour_base.html" %}
+{% block content2 %}
+
+
+<div class='panel panel-default'>
+    <div class='panel-heading'>Review your tour</div>
+    <div class='panel-body'> 
+
+    <div class='col-sm-8'>
+    <form method='post' action='' enctype='multipart/form-data'> {% csrf_token %} {% load widget_tweaks %}
+        <h3>{{ tour_instance.title }} </h3>
+        <!-- <img src='{{instance.image.url}}' width='500' height = '250' /> -->
+        
+        <p>{{ tour_instance.description }}</p>
+        <hr>
+
+        {% for stop in instance %}
+        
+        <h3> Stop{{ forloop.counter }}</h3>
+        <img src='{{stop.image.url}}' width='500' height='250'/>
+        <p> {{ stop.content }}
+            <hr>
+        {% endfor %}
+
+        <div class='col-sm-offset-6'>
+        <a href='/tourist/create/create_tours/finish/' class='btn btn-block btn-primary' type="submit" value="Finish"/> Finish </a>
+        
+    </form>
+    </div>
+</div>
+</div>
+
+
+
+{% endblock %}
