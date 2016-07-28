@@ -2,22 +2,20 @@
 {% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+    <div id="container">
+
+    <div id="head">
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="">
-        <meta name="author" content="">
-        <title>Welcome to Venture</title>
+        <title>Welcome to Venture!</title>
         <link rel="icon" href="http://getbootstrap.com/favicon.ico">
         <link rel="stylesheet" href="http://getbootstrap.com/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="http://getbootstrap.com/examples/dashboard/dashboard.css">
-        <link rel="stylesheet" type="text/css" href="../static/css/base.css" />
-    </head>
+        <link rel="stylesheet" type="text/css" href="{% static "css/base.css" %}" />
+    </div>
 
-    <body>
-
-            <!-- <div class="wrap"> -->
+    <div id="body">
 
         <!-- This is navigation bar code %%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
         <nav class="navbar navbar-fixed-top navbar-overlay" style="background: rgba(0,0,0,0.4)">
@@ -46,7 +44,7 @@
                 <!-- if user is authenticated -->
                 {% else %}
                 <li><a href="/tourist/search" style="color:rgba(209,209,209,1);">Search Tours</a><li>
-                <li><a href="/tourist/create/your_tours" style="color:rgba(209,209,209,1);">Create Tour</a></li>
+                <li><a href="/tourist/create" style="color:rgba(209,209,209,1);">Create Tour</a></li>
                 <li><a href="/tourist/mypage" style="color:rgba(209,209,209,1);">Profile</a></li>
                 <li><a href="/tourist/profile" style="color:rgba(209,209,209,1);">Account</a></li>
                 <li><a href="{% url 'auth_logout' %}?next=/tourist/" style="color:rgba(209,209,209,1);">Log Out</a></li>
@@ -60,20 +58,21 @@
 
         {% block body_block %}{% endblock %}
 
-            <!-- </div> -->
+    </div>
 
-        <div class="footer">
-            <div class="navFooter">
-                <ul class="row">
-                    <li><a style="color:rgba(173,173,173,1)" href="">About</li>
-                    <li><a style="color:rgba(173,173,173,1)" href="">Contact</li>
-                    <li><a style="color:rgba(173,173,173,1)" href="">Help</li>
-                </ul>
-            </div>
+    <div id="footer">
+        <div class="navFooter">
+            <ul class="row">
+                <li><a href="">About</li>
+                <li><a href="">Contact</li>
+                <li><a href="">Help</li>
+            </ul>
         </div>
+    </div>
 
+    </div>
 
-        <!-- Necessary Javascript, and jquery stuff -->
+     <!-- Necessary Javascript, and jquery stuff -->
         <!-- Placed at the end of the document so the pages load faster -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
@@ -82,5 +81,5 @@
         <script src="http://getbootstrap.com/assets/js/vendor/holder.min.js"></script>
         <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
         <script src="http://getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js"></script>
-    </body>
+
 </html>
