@@ -86,6 +86,8 @@ def tour_detail_page(request, slug=None):
 
 
 
+
+
 ''' This is TOURIST VIEWS '''
 def main_page(request):
     current_user = request.user
@@ -128,6 +130,37 @@ def search_page(request):
         return render(request, "tourist/search.html", context_dict)
     else:
         return render(request, "tourist/search_result.html", context_dict)
+
+
+
+def explore_tour_view(request, slug):
+    current_user = request.user
+    tour_obj = get_object_or_404(Tour, slug=slug)
+    Stops = stops.objects.all().filter(tour=tour_obj)
+    tour_instance = tour_obj
+    context_dict = {
+        'current_user': current_user.username,
+        'object':tour_obj,
+        'stops':Stops,
+
+    }
+
+
+    return render(request, "tourist/explore_tour.html", context_dict)
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #Need to implement my page according to the user
 @login_required

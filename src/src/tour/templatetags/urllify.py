@@ -20,4 +20,9 @@ def get_delete_url(value): #value will be obj.get_absolute_url
 def get_edit_url(value):
     return "/tourist/tours/" + value + "/edit"
 
+#This returns url (tourist view of tour)
+@register.filter
+@stringfilter
+def get_explore_url(value):
+    return "/tourist/tours/" + value + "/tourist_view"
 

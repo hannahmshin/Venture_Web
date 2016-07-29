@@ -21,6 +21,7 @@ from .views import (
     clear_the_form,
     delete_tour_instance,
     eidt_tour_instance,
+    explore_tour_view,
    
 )
 
@@ -42,7 +43,8 @@ urlpatterns = [
     url(r'^profile_preference/', profile_page_preferences, name="preferences"),
     url(r'^create/clear_form', clear_the_form, name="clear_form"),
 
-  
+    #Tourist view of tours
+    url(r'^tours/(?P<slug>[^\.]+)/tourist_view/',explore_tour_view, name="tourist_view_tour"),
     #Delete tour url
     url(r'^tours/(?P<slug>[^\.]+)/delete/', delete_tour_instance, name="delete_tour"),
     #Edit tour instance
