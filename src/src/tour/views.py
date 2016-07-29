@@ -117,6 +117,7 @@ def search_page(request):
     context_dict = {
         'current_user' :current_user.username,
         'object_list' : queryset_list,
+        'city_name': query,
     }
 
     request.session['query'] = query
@@ -127,19 +128,6 @@ def search_page(request):
         return render(request, "tourist/search.html", context_dict)
     else:
         return render(request, "tourist/search_result.html", context_dict)
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 #Need to implement my page according to the user
 @login_required
