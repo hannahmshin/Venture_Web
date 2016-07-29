@@ -98,23 +98,48 @@ def about_page(request):
     context_dict = {'current_user' :current_user.username }
     return render(request, "tourist/about.html", context_dict)
 
-#Need to implement search 
+
+
+
+
+#####################################
+######## SEARCH PAGES ###############
+#####################################
+
 def search_page(request):
     current_user = request.user
     queryset_list = Tour.objects.all()
     #Basic search functionality
     query = request.GET.get("q")
+    print "Initial query", query
     if query:
         queryset_list = queryset_list.filter(title__icontains = query)
-
-
-
-
     context_dict = {
         'current_user' :current_user.username,
         'object_list' : queryset_list,
     }
-    return render(request, "tourist/search.html", context_dict)
+
+    request.session['query'] = query
+    print query, request.session['query']
+
+
+    if not query: 
+        return render(request, "tourist/search.html", context_dict)
+    else:
+        return render(request, "tourist/search_result.html", context_dict)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #Need to implement my page according to the user
 @login_required

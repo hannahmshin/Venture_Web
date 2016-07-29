@@ -1,15 +1,60 @@
 <!-- search -->
 {% extends "tourist/tourguide_base.html" %}
 {% block body_block %}
+
+<style>
+
+/*This changes so that input form only had bottom border */
+#search_input {
+    
+    position:relative;
+    top:100px;
+    right:5px;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 2px solid #B56357;
+    width: 800px;
+    height: 60px;
+    font-size: 50px;
+    color: #B56357;
+}
+
+/*This changes font size of placeholder */
+search_input,
+input::-webkit-input-placeholder {
+    font-size: 50px;
+    line-height: 2;
+}
+
+#search_button {
+    position:relative;
+    top:100px;
+}
+
+#search_logo {
+    position:relative;
+    top:100px;
+    color: #B56357;
+    background: transparent;
+}
+
+</style>
+
+
 <div class="container-fluid">
-<div class='col-sm-3 col-sm-offset-2'>
-<form method='GET' action=''>
-    <input type='text' name='q' placeholder='search cities' value='{{ request.GET.q }}'/>
-    <input type='submit' value='search' />
+<div class='col-sm-8 col-sm-offset-2'>
+<form method='GET' action='/tourist/search/'>
+    <input id='search_input' type='text' name='q' placeholder='Explore a city' value='{{ request.GET.q }}'/>
+    <button href='/tourist/search/results'id='search_logo' class="glyphicon glyphicon-search btn btn-large" aria-hidden="true" type='submit' ></button>
+
+
+
+
 </form>
 </div>
+<!-- 
 
-<!-- displaying search result -->
 {% for obj in object_list %}
   <div class="col-sm-12">
     <div class="thumbnail">
@@ -25,7 +70,7 @@
     </div>
   </div>
   {% endfor %}
-</div>
+</div> -->
 
  
 

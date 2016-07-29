@@ -21,12 +21,13 @@ from .views import (
     clear_the_form,
     delete_tour_instance,
     eidt_tour_instance,
+   
 )
 
 urlpatterns = [
     url(r'^$', main_page, name="main"), 
-    url(r'^about/', about_page, name="about"),
-    url(r'^search/', search_page, name="search"),
+    url(r'^about/$', about_page, name="about"),
+    url(r'^search/$', search_page, name="search"),
     url(r'^mypage/', my_page, name="mypage"),
     url(r'^create/$', create_page, name="create"),
     url(r'^profile/', profile_page, name="profile"),
@@ -41,12 +42,11 @@ urlpatterns = [
     url(r'^profile_preference/', profile_page_preferences, name="preferences"),
     url(r'^create/clear_form', clear_the_form, name="clear_form"),
 
+  
     #Delete tour url
     url(r'^tours/(?P<slug>[^\.]+)/delete/', delete_tour_instance, name="delete_tour"),
     #Edit tour instance
     url(r'^tours/(?P<slug>[^\.]+)/edit/', eidt_tour_instance, name="edit_tour"),
-
-
     #This is for tour_detail page for specific tours
     url(r'^tours/(?P<slug>[^\.]+)/$', tour_detail_page, name="tour_detail"),
     #url(r'^(?P<id>\d+)/edit/$', post_update, name="update"),
