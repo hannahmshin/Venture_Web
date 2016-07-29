@@ -44,7 +44,7 @@
                 <!-- if user is authenticated -->
                 {% else %}
                 <li><a href="/tourist/search" style="color:rgba(209,209,209,1);">Search Tours</a><li>
-                <li><a href="/tourist/create" style="color:rgba(209,209,209,1);">Create Tour</a></li>
+                <li><a href="/tourist/create/your_tours/" style="color:rgba(209,209,209,1);">Create Tour</a></li>
                 <li><a href="/tourist/mypage" style="color:rgba(209,209,209,1);">Profile</a></li>
                 <li><a href="/tourist/profile" style="color:rgba(209,209,209,1);">Account</a></li>
                 <li><a href="{% url 'auth_logout' %}?next=/tourist/" style="color:rgba(209,209,209,1);">Log Out</a></li>
