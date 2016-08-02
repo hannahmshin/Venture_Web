@@ -138,12 +138,20 @@ def search_page(request):
 def explore_tour_view(request, slug):
     current_user = request.user
     tour_obj = get_object_or_404(Tour, slug=slug)
+
+    author_user_obj = tour_obj.author
+    author_tour_user_obj = tour_user.objects.get(pk=author_user_obj.pk)
+
+
+
     Stops = stops.objects.all().filter(tour=tour_obj)
     tour_instance = tour_obj
     context_dict = {
         'current_user': current_user.username,
         'object':tour_obj,
         'stops':Stops,
+        'author':author_tour_user_obj,
+        'author_user':author_user_obj,
 
     }
 
@@ -285,9 +293,13 @@ def delete_tour_instance(request, slug):
 #later instead of loading whole page, learn how to load part of the page
 @login_required
 def create_page_yourtour(request):
+
+
+
+
     request.session['loc'] = 'create_page'
     #Get tours that are not in draft mode
-    queryset_list = Tour.objects.all().filter(draft=False) 
+    queryset_list = Tour.objects.all().filter(draft=False, author=request.user) 
     #check to see if the user created any tours
     tour_exists = True
     if(len(queryset_list) == 0):
@@ -299,6 +311,14 @@ def create_page_yourtour(request):
     }
 
     return render(request, "tourguide/create_your_tours.html", context)
+
+
+
+
+
+
+
+
 
 @login_required
 def create_page_create(request):
