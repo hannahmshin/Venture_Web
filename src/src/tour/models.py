@@ -38,7 +38,37 @@ class tour_user(models.Model):
     # phone_regex = RegexValidator(regex=r'^\+?1?\d{9,15}$', message="Phone number must be entered in the format: '+9999999999'. Up to 15 digits allowed.")
     phone_number = models.CharField(blank = True, max_length = 15)
 
-    
+    #user profile picture
+    profile_picture = models.ImageField(default='images/default.jpg', upload_to = "images", null=True, blank=True, height_field= "height_field", width_field="width_field" )
+    height_field = models.IntegerField(default=0)
+    width_field = models.IntegerField(default=0)
+
+
+
+    languages = models.TextField(blank = True)
+
+    work = models.CharField(blank = True, max_length = 50)
+
+    hometown = models.CharField(blank = True, max_length = 50)
+
+    alma_meter = models.CharField(blank = True, max_length = 50)
+
+    hobbies = models.TextField(blank = True)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     #Describe yourself to other people.
     about_you = models.TextField(blank = True)

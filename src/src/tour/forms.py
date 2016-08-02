@@ -21,6 +21,12 @@ class tour_user_Form(forms.ModelForm):
             "User_Gender",
             "about_you",
             "phone_number",
+            "profile_picture",
+            "languages",
+            "work",
+            "hometown",
+            "alma_meter",
+            "hobbies",
         ]
        
 

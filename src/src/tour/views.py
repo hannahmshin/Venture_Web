@@ -23,11 +23,12 @@ def profile_page(request):
 
     current_user = request.user
     user = User.objects.get(pk=current_user.pk)
+    tour_user_obj = tour_user.objects.get(pk=current_user.pk)
     user_form = UserForm(instance=user)
 
     #TESTING PURPOSE#
 
-    ProfileInlineFormset = inlineformset_factory(User, tour_user, fields=('User_Gender', 'phone_number', 'about_you'))
+    ProfileInlineFormset = inlineformset_factory(User, tour_user, fields=('User_Gender', 'phone_number', 'about_you', 'profile_picture', 'languages', 'work', 'hometown', 'alma_meter', 'hobbies',))
     formset = ProfileInlineFormset(instance=user)
     
 
@@ -46,9 +47,10 @@ def profile_page(request):
                     return HttpResponseRedirect('/tourist/profile/')
  
         return render(request, "tourist/edit_your_profile.html", {
-            'current_user' :current_user.username,
+            'current_user' :current_user,
             "form": user_form,
             "formset": formset,
+            'user_obj':tour_user_obj,
         })
     else:
         raise PermissionDenied
@@ -166,10 +168,29 @@ def explore_tour_view(request, slug):
 @login_required
 def my_page(request):
     current_user = request.user
-    context_dict = {'current_user' :current_user.username }
+    user_obj = User.objects.get(pk=current_user.pk)
+    tour_user_obj = tour_user.objects.get(pk=current_user.pk)
+
+
+    context_dict = {'current_user' :current_user,
+                    'user_obj':user_obj,
+                    'tour_user_obj':tour_user_obj,
+                     }
+
     return render(request, "tourist/mypage.html", context_dict)
 
 ''' TOURIST VIEWS END '''
+
+
+
+
+
+
+
+
+
+
+
 
 
 

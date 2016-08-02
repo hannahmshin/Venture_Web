@@ -2,13 +2,26 @@
 {% extends "tourist/tourguide_base.html" %}
 {% block body_block %}
 
+
+<style>
+
+#profile_image {
+    background-repeat: no-repeat;
+    background-position: 50%;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+}
+
+</style>
+
 <div class="container-fluid">
     <div class='col-sm-3 col-sm-offset-1'>
         <!-- This is going to be a panel for profile -->
         <div class='dashboard'>
             <div class='panel panel-default'>
-                <div class='panel-heading'> Welcome back <strong>{{ current_user }}</strong> </div>
-                <div class='panel-body'> Insert user image here </div>
+                <div class='panel-heading'><center> Welcome back <strong>{{ current_user.first_name }}</strong></center> </div>
+                <div class='panel-body'><center><img id='profile_image' src= '{{ user_obj.profile_picture.url}}'/></center></div>
             </div>
 
             <div class="list-group">

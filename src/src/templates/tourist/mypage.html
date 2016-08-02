@@ -2,12 +2,120 @@
 {% extends "tourist/tourguide_base.html" %}
 
 {% block body_block %}
-<div class="wrapper">
-	<div class="row">
-		<div class="col-md-3">
-			<img src="{{ user_object.profile_image.url }}" width='150' height='150'>
-		</div>
-	</div>
+
+
+<style>
+
+#profile_container {
+    margin-top: 30px;
+}
+#greeting {
+    font-size: 50px;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+#profile_header {
+    font-size: 15px;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+#profile_body{
+    font-size: 15px;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+#tour_listings {
+    font-size: 30px;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+#small-intro {
+    font-size: 14px;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+
+</style>
+
+
+
+
+
+<div id='profile_container'>
+    <div class='container-fluid'>
+        <div class='row'>
+            <div class='col-md-2 col-sm-offset-1' >
+                <img src='{{ tour_user_obj.profile_picture.url }}' width='200' height='250'/>
+            </div>
+
+            <div class='col-md-8'>
+                <p id='greeting'>Nice to meet you, my name is {{user_obj.first_name}}! </p>
+                {% if tour_user_obj.about_you %}
+                <p id='small-intro'> {{ tour_user_obj.about_you }} </p>
+                {% endif %}
+
+
+                {% if tour_user_obj.hometown %}
+                <p id='small-intro'> <strong>Hometown</strong>: {{ tour_user_obj.hometown }} </p>
+                {% endif %}
+
+
+                {% if tour_user_obj.work %}
+                <p id='small-intro'> <strong>Work</strong>: {{ tour_user_obj.work }} </p>
+                {% endif %}
+
+                {% if tour_user_obj.alma_meter %}
+                <p id='small-intro'> <strong>School</strong>: {{ tour_user_obj.alma_meter }} </p>
+                {% endif %}
+
+
+
+            </div>
+
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row">
+            <div class='col-md-2 col-sm-offset-1'>
+                <div class='panel panel-default'>
+                    <div class='panel-heading'><p id='profile_header'><center><strong>My contact information</strong></center></p></div>
+                    <div class='panel-body'>
+                        <p id='profile_body'>My name is:</p>
+                        <p id='profile_header'><strong>{{ user_obj.first_name}}, {{ user_obj.last_name}} </strong></p>
+                        <p id='profile_body'>Contact me at:</p>
+                        <p id='profile_header'><strong>{{ user_obj.email}}</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- my current tours -->
+            <div class='col-md-4'>
+                <p id='tour_listings'>Check out my current tours! </p>
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class='row'>
+                <div class='col-md-2 col-sm-offset-3'>
+                    <p id='tour_listings'>My reviews</p>
+                </div>
+        </div>
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
 </div>
+
+
+
+
 
 {% endblock %}
