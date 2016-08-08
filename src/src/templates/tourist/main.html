@@ -33,7 +33,6 @@
 
             </span>
 
-
             <span class="greeting_word">
                 <span class="greeting_letter">T</span>
                 <span class="greeting_letter">O</span>
@@ -52,12 +51,11 @@
 <!-- this is where secondary contents start -->
 
 <div class="secondary-contents clearfix">
-
+    <!-- Carousel Box for different Images -->
     <div class="info-box">
-        <div class="arrow-wrapper">
-            <div class="arrow-head-left">&lt</div>
-            <div class="arrow-stem-left"> </div>
-        </div>
+        <!--Carousel is a list of items in html -->
+        <button id="left_arrow" class="glyphicon glyphicon-chevron-left btn btn-large" aria-hidden="true"></button>
+        <button id="right_arrow" class="glyphicon glyphicon-chevron-right btn btn-large" aria-hidden="true"></button>
     </div>
 
 
@@ -78,10 +76,55 @@
         </div>
     </div>
     <div class="info-box2">
-        
+        <button id="left_arrow" class="glyphicon glyphicon-chevron-left btn btn-large" aria-hidden="true"></button>
+        <button id="right_arrow" class="glyphicon glyphicon-chevron-right btn btn-large" aria-hidden="true"></button>
     </div>
 </div>
 
+
+<script>
+
+//Variables: change picture variables later
+// var insert_image = "<li><img /></li>";
+// var pic1 = "/static/images/IMG_1755.jpg";
+// var pic2 = "/static/images/IMG_0199.jpg"; 
+// var pic3 = "/static/images/IMG_1678.jpg"; 
+// var pics = [pic1, pic2, pic3];
+
+// //Add pictures
+// for(var i = 0; i < pics.length; ++i) {
+//     $(".content").append('<li><img src="' + pic1 + '"/></li>');
+// };
+
+
+
+
+
+
+//Simple scripts for changing the color of button when pressed/unpressed
+$("#left_arrow").mousedown(function() {
+    //change the color
+    $(this).css("color","black");
+
+});
+
+$("#left_arrow").mouseup(function() {
+    //change the color
+    $(this).css("color","#bccbde");
+});
+
+$("#right_arrow").mousedown(function() {
+    //change the color
+    $(this).css("color","black");
+});
+
+$("#right_arrow").mouseup(function() {
+    //change the color
+    $(this).css("color","#bccbde");
+});
+
+
+</script>
 
 
 

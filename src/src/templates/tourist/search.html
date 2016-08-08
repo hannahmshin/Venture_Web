@@ -21,13 +21,13 @@
 }
 
 /*This changes font size of placeholder */
-search_input,
+/*search_input,
 input::-webkit-input-placeholder {
     font-size: 50px;
     line-height: 2;
 }
-
-#search_button {
+*/
+/*#search_button {
     position:relative;
     top:100px;
 }
@@ -37,18 +37,48 @@ input::-webkit-input-placeholder {
     top:100px;
     color: #B56357;
     background: transparent;
-}
+}*/
 
 </style>
 
 
-<div class="container-fluid">
-    <div class='aboutSection col-sm-8 col-sm-offset-2'>
-        <form method='GET' action='/tourist/search/'>
+<div class="search-page">
+    <div class='search-heading'>
+        <p id="custom-heading"> Hey there, ready for a tour? </span>
+        <div id="custom-bottom-border"> </div>
+    </div>
+
+
+
+<!-- Try to make my own custom dropdown menu!! with Aweseom colors -->
+<form method='GET' action='/tourist/search/'>
+    <div class='search-body'>
+        <p id="line1">I want to explore 
+            <input class="search_input_type" type='text' name='q' placeholder="cityname" value='{{ request.GET.q }}'> </input> 
+
+            on 
+            <input class="search_input_type" type='text' placeholder='day/month/year'> &nbsp.Oh did I mention?</p>
+
+        <p id="line2">I would <input class="search_input_type" type='text' placeholder='Like to'>
+        meet other tourist. And,</p>
+
+        <p id="line3">I will be wearing 
+            <input class="search_input_type" type='text' placeholder='Types of shoes'>
+        </p>
+
+        <button href='/tourist/search/results' id='search_btn' class="btn btn-large" aria-hidden="true" type='submit' >Find Me</button>
+    </div>
+
+</form>
+
+
+
+        <!-- <form method='GET' action='/tourist/search/'>
             <input id='search_input' type='text' name='q' placeholder='Explore a city' value='{{ request.GET.q }}'/>
             <button href='/tourist/search/results'id='search_logo' class="glyphicon glyphicon-search btn btn-large" aria-hidden="true" type='submit' ></button>
-        </form>
-    </div>
+        </form> -->
+
+
 </div>
  
 
