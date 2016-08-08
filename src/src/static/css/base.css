@@ -1,64 +1,504 @@
-/*for tourguide_base.html*/
-.navbar {
-	background: rgba(255,255,255,0.4);
+/** Configuring background color and NAV-BAR ******************/
+
+body {
+    background-color: black;
 }
-.navbar a:hover{
-	background: rgba(0,0,0,0.4) !important;
+* {
+    box-sizing: border-box;
 }
+
+#navbar .navbar-brand-j{
+    display: inline-block;
+    color: #cdd422;
+    float: left;
+    font-weight: bold;
+    font-size: 3em;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    margin-left: 1em;
+    margin-right: 0;
+    text-decoration: none;
+}
+
+
+#navbar .navbar-list_j {
+    display: inline block;
+    float:right;
+    font-size: 1.4rem;
+    padding-top: 4.2rem;
+    padding-bottom: 4.2rem;
+    margin-left: -5px;
+    margin-right: 100px;
+}
+
+
+#navbar .navbar-list_j a {
+
+    display: block;
+    color: #cdd422;
+    padding: 10px 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#navbar .navbar-list_j a:hover {
+    color: #c2dde6;
+    
+}
+
+
+#navbar .navbar-list_j li{
+    display: inline-block;
+    margin: 0;
+   
+}
+
+#navbar {
+    position: fixed;
+    top:0;
+    left:0;
+    z-index: 20;
+    background: #431c5d;
+    height: 115px;
+    width: 100%;
+    margin: 0 auto;
+    font-family: 'Varela Round', sans-serif;
+    border-bottom: 4px solid #c2dde6;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+
+/** Main greeting page ******************/
+
+.main-image {
+    padding-top: 170px;
+    height: 850px;
+    background: 
+        linear-gradient(#bccbde, transparent 90%),
+        url('../images/IMG_1337.jpg');
+    background-size: cover;
+    border-bottom: 4px solid #c2dde6;
+    
+}
+
+
+.main-greeting {
+    padding-top: 100px;
+}
+.greeting_word {
+    background: black;
+    display: block;
+    height: 100px;
+    font-weight: bold;
+    font-family: 'Varela Round', sans-serif;
+}
+.greeting_letter {
+    font-size: 3.5em;
+    color: azure;
+    display: inline-block;
+    transition:0.4s ease-in-out;
+}
+
+@-webkit-keyframes bounce {
+  0% {
+    -webkit-transform:translateY(-5%);
+
+  }
+  5% {
+    -webkit-transform:translateY(-30%);
+ 
+  }
+  15% {
+    -webkit-transform:translateY(-20%);
+
+  }
+  30% {
+    -webkit-transform:translateY(-10%);
+  }
+  40% {
+    -webkit-transform:translateY(-5%);
+    
+  }
+  50% {
+    -webkit-transform:translateY(-5%);
+  }
+  70% {
+    -webkit-transform:translateY(0%);
+  
+  }
+  80% {
+    -webkit-transform:translateY(-2%);
+  }
+  90% {
+    -webkit-transform:translateY(-1%);
+    
+  }
+  95% {
+    -webkit-transform:translateY(0%);
+  }
+  97% {
+    -webkit-transform:translateY(1%);
+    
+  }
+  99% {
+    -webkit-transform:translateY(2%);
+  }
+  100% {
+    -webkit-transform:translateY(0);
+  }
+}
+
+.greeting_word .greeting_letter:hover {
+    -webkit-animation: bounce 1500ms ease-in-out;
+}
+
+.greeting_word:first-child {
+    padding-left: 100px;
+    margin-bottom: 50px;
+    width: 60%;
+}
+
+.greeting_word:nth-child(2) {
+    padding-left: 160px;
+    margin-bottom: 50px;
+    width: 80%;
+}
+
+.greeting_word:nth-child(3) {
+    padding-left: 130px;
+    width: 55%;
+}
+
+.secondary-contents {
+    height: 500px;
+    
+}
+
+.info-box,
+.info-box2 {
+    height: 500px;
+    
+}
+
+.info-box:first-child {
+    
+    width:65%;
+    background: linear-gradient(#bccbde, transparent 90%),url('../images/IMG_1755.jpg');
+    float: left;
+    background-size: cover;
+    margin-bottom: 0px;
+
+}
+
+.info-box:nth-child(2) {
+    width: 35%;
+    background: #431c5d;
+    float: right;
+    background-size: cover;
+}
+
+
+.info-heading {
+    margin-top: 12%;
+    margin-left: 15%;
+    padding-left: 10px;
+    padding-right: 0px;
+    width: 66%;
+    color:#cdd422;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow:6px 6px 0px rgba(0,0,0,1);
+    font-size: 3em;
+    border: 3px solid white;
+}
+
+.info-content {
+    margin-top: 12%;
+    margin-left: 15%;
+    padding-left: 10px;
+    
+    width: 70%;
+    color:#cdd422;
+    font-weight: normal;
+    text-shadow:3px 3px 0px rgba(0,0,0,1);
+    font-size: 1.5em;
+}
+
+
+.info-box2:first-child {
+    width: 35%;
+    background: #431c5d;
+    float: left;
+}
+
+.info-box2:nth-child(2) {
+
+    width:65%;
+    background: linear-gradient(#bccbde, transparent 90%),url('../images/IMG_0199.jpg');
+    float: right;
+    background-size: cover;
+    margin-bottom: 0px;
+    
+}
+
+
+
+/******** FOOTER CSS ******************/
+.main-footer {
+    height: 180px;
+    width: 100%;
+    margin-top: 15px;
+    background-color: #cdd422;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.navbar.navbar-fixed-top.navbar-overlay {
+    background: white;
+    padding-bottom: 20px;
+
+}
+.navbar-brand {
+    color: #6b7A8F;
+    position: fixed;
+    margin-left: 100px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    font-size: 40px;
+}
+.nav.navbar-nav.navbar-right {
+    margin-left: 0px;
+    margin-right: 100px;
+    margin-top: 15px;
+    margin-bottom: 0px;
+    font-size: 30px;
+}
+
+#list-item {
+    background-color: black;
+}
+.nav.navbar-nav.navbar-right a:hover {
+    text-decoration: none;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    border-radius: 50%;
+}
+
+
+
+
+.glyphicon.glyphicon-envelope {
+    margin-right: 5px;
+    margin-bottom: 8px;
+}
+
+/* main.html */
+#about_heading {
+    margin-top: 400px;
+    background: rgba(0,0,0,0.4);
+    color: cornsilk;
+    font-size: 70px;
+}
+
+#about_heading_small {
+    font-size: 40px;
+    background: rgba(0,0,0,0.4);
+    color: cornsilk;
+}
+
+#about_heading2 {
+    margin-top: 380px;
+    background: rgba(0,0,0,0.4);
+    color: cornsilk;
+    font-size: 40px;
+}
+
+#about_heading_small2 {
+    font-size: 28px;
+    background: rgba(0,0,0,0.4);
+    color: cornsilk;
+}
+
+#about_heading3 {
+    margin-top: 380px;
+    background: rgba(0,0,0,0.4);
+    color: cornsilk;
+    font-size: 40px;
+}
+
+#about_heading_small3 {
+    font-size: 28px;
+    background: rgba(0,0,0,0.4);
+    color: cornsilk;
+}
+
+.aboutSection {
+    height: 750px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.aboutSection2 {
+    margin-top: 50px;
+    height: 500px;
+    width: 900px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.aboutSection3 {
+    margin-top: 50px;
+    margin-left: 400px;
+    height: 500px;
+    width: 900px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+
+
+
+
+
+
+
 html, body {
-	margin: 0;
-	padding: 0;
-	height: 100%;
+    margin: 0;
+    padding: 0;
+    height: 100%;
 }
 #container {
-	min-height: 100%;
-	position: relative;
-	background: #EFEFEF;
+    min-height: 100%;
+    position: relative;
+    background: #EFEFEF;
 }
 .container-fluid {
-	padding-top: 60px;
+    padding-top: 102px;
 }
+
+
+
+
+
+
+
 #body {
-	padding-bottom:60px;
+    padding-bottom:60px;
     margin-bottom: 0px;
 }
-#footer {
-	position:fixed;
-	bottom:0;
+.footer {
+    position:fixed;
+    bottom:0;
     width:100%;
     height:60px;
-	background: #A9A9A9;
-	/*background: rgba(53,53,53,1);*/
+    background: #cdd422;
+    /*background: rgba(53,53,53,1);*/
 }
 .navFooter {
-	text-align: center;
+    text-align: center;
 
-	/*to vertical align center*/
-	position: relative;
-	top: 50%;
-	transform: translateY(-50%);
+    /*to vertical align center*/
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }
 .navFooter li {
-	display: inline;
+    display: inline;
 }
 .navFooter a {
-	color: black;
+    color: black;
 }
 
-/*for main.html*/
-.aboutSection {
-	height: 450px;
-	background-repeat: no-repeat;
-	background-size: cover;
-}
+
 .infoBox {
-	background: rgba(255,255,255,0.4);
-	height: 200px;
-	width: 600px;
-	padding: 15px;
+    background: rgba(255,255,255,0.4);
+    height: 200px;
+    width: 600px;
+    padding: 15px;
 }
 
 
-/*for login modal*/
-#loginModal {
+
+
+
+
+
+
+
+
+/* CSS for Search_results */
+.transition {
+    -webkit-transform: scale(1.6); 
+    -moz-transform: scale(1.6);
+    -o-transform: scale(1.6);
+    transform: scale(1.6);
 }
+
+.panel_backgournd {
+    background-color: rgba(0,0,0,0.3);
+}
+
+img {
+    -webkit-transition: all .4s ease-in-out;
+    -moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -ms-transition: all .4s ease-in-out;
+}
+
+
+
+
+
+
+
+
+
+
+/* Commonly Used */
+.button_selected {
+    background-color: blue;
+}
+
+
+.fixed-panel {
+  min-height: 10;
+  max-height: 10;
+  overflow-y: scroll;
+}
+
+
+
+
+.clearfix::after {
+        content: " ";
+        display: table;
+        clear: both;
+    }

@@ -3,111 +3,72 @@
 <!DOCTYPE html>
 
 
+
+
+
 <html lang="en">
-    <div id="head">
+    <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Welcome to Venture!</title>
+        <title>Venture:explore your limit</title>
         <link rel="icon" href="http://getbootstrap.com/favicon.ico">
         <link rel="stylesheet" href="http://getbootstrap.com/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="http://getbootstrap.com/examples/dashboard/dashboard.css">
         <link rel="stylesheet" type="text/css" href="{% static "css/base.css" %}" />
-    </div>
+    </head>
 
-    <div id="body">
-        <div id="container">
-        <!-- This is navigation bar code %%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
-        <nav class="navbar navbar-fixed-top navbar-overlay" style="background: rgba(0,0,0,0.4)">
-          <div class="container">
+    <body>
+        <!-- custom navigation bar -->
 
-            <div class="navbar-header">
-                <a class="navbar-brand" href="/tourist/" style="color:rgba(209,209,209,1);"><strong>Venture</strong></a>
-            </div>
-
-            <div class="navbar-collapse collapse">
-              <ul class="nav navbar-nav navbar-right">
-
-                <!-- This menu is for everyone -->
+        <nav id="navbar" class="clearfix">
+            <a class="navbar-brand-j" href="/tourist/">Venture</a>
+            <ul class="navbar-list_j">
                 {% if not user.is_authenticated %}
-                <li><a href="{% url 'registration_register' %}" style="color:rgba(209,209,209,1);">Sign Up</a></li>
-                <li><a href="{% url 'auth_login' %}" style="color:rgba(209,209,209,1);">Log In</a></li>
- 
-                <!--trying to create login popup-->
-                <li><a data-toggle="modal" data-target="#loginModal" href="{% url 'auth_login' %}" style="color:rgba(209,209,209,1);">Modal</a></li>
-                <div id="loginModal" class="modal fade">
-                    <div>
-                        <div class="modal-content"></div>
-                    </div>
-                </div>
-
-                <!-- if user is authenticated -->
+                    <li><a href="{% url 'registration_register' %}">Sign Up</a></li>
+                    <li><a href="{% url 'auth_login' %}">Log In</a></li>
+                    <!-- if user is authenticated -->
                 {% else %}
-                <li><a href="/tourist/search" style="color:rgba(209,209,209,1);">Search Tours</a><li>
-                <li><a href="/tourist/create/your_tours/" style="color:rgba(209,209,209,1);">Create Tour</a></li>
-                <li><a href="/tourist/mypage" style="color:rgba(209,209,209,1);">Profile</a></li>
-                <li><a href="/tourist/profile" style="color:rgba(209,209,209,1);">Account</a></li>
-                <li><a href="{% url 'auth_logout' %}?next=/tourist/" style="color:rgba(209,209,209,1);">Log Out</a></li>
+                    <li><a href="/tourist/search">SEARCH</a></li>
+                    <li><a href="/tourist/create/your_tours/">CREATE</a></li>
+                    <li><a href="/tourist/mypage">PROFILE</a></li>
+                    <li><a href="/tourist/profile">ACCOUNT</a></li>
+                    <li><a href="{% url 'auth_logout' %}?next=/tourist/">LOGOUT</a></li>
                 {% endif %}
-
-              </ul>
-            </div><!--/.nav-collapse -->
-
-          </div>
+            </ul>
         </nav>
-    </div>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- my temporary Jquery Code lives here -->
+    <script>
 
 
-{% block body_block %}{% endblock %}
+    </script>
+
+
+    {% block body_block %}{% endblock %}
+
+    <footer class='main-footer'>
+        
+        <div id='footer-container'>
+                <p><strong>Venture</strong></p>
+                <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> junhouse@umich.edu <br>
+                <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> +1(111)-111-1111
+        </div>
+       
+    </footer>
+    
 </div>
 
-<style>
-/*#full-width-div {
-    position: absolute;
-    width: 100%;
-    height: 40px;
-    left: 0;
-    background: #A9A9A9;
-}*/
-
-#bread {
-    background: transparent;
-    
-    font-size: 15px;
-}
-
-.footer {
-    position:fixed;
-    bottom:0;
-    width:100%;
-    height:40px;
-    background: #A9A9A9;
-}
-</style>
-    
-
-
-    <footer class='footer'>
-        <div class="container" id='full-width-div'>
-            <div class='col-md-6 col-md-offset-5'>
-                <ol id='bread' class="breadcrumb">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ol>
-            </div>
-        </div>
-    </footer>
-
-
+</body>
 
 
 
  
 
      <!-- Necessary Javascript, and jquery stuff -->
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <!-- Placed at the end of the document so the pages load faster -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
         <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
         <!-- Just to make our placeholder images work. Don't actually copy the next line! -->

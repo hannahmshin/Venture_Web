@@ -1,55 +1,90 @@
 <!-- main.html for tourist and in general -->
 {% extends "tourist/tourguide_base.html" %}
+{% load staticfiles %}
 {% block body_block %}
 
-<!-- This is homepage when the user is not logged in -->
+<div class="row">
+<div class='main-conents'>
+    <div class='main-image'>
+        <h2 class='main-greeting'>
+            <span class="greeting_word">
+                <span class="greeting_letter">E</span>
+                <span class="greeting_letter">X</span>
+                <span class="greeting_letter">P</span>
+                <span class="greeting_letter">L</span>
+                <span class="greeting_letter">O</span>
+                <span class="greeting_letter">R</span>
+                <span class="greeting_letter">E</span>
+            </span>
 
-<div>
-    <div class='aboutSection' style="background-image:url(../static/images/kc.jpg)">
-        <div class='container'>
-            <div class='col-sm-5' style="padding-top: 50px">
-                <h1>Go everywhere you want <br>
-                <small>Don't worry about what is there, <br> just choose who will guide your tour </small> </h1>
-            </div>
-        </div>
+            <span class="greeting_word">
+                <span class="greeting_letter">L</span>
+                <span class="greeting_letter">O</span>
+                <span class="greeting_letter">C</span>
+                <span class="greeting_letter">A</span>
+                <span class="greeting_letter">L</span>
+                <span class="greeting_letter">&nbsp</span>
+                <span class="greeting_letter">C</span>
+                <span class="greeting_letter">I</span>
+                <span class="greeting_letter">T</span>
+                <span class="greeting_letter">I</span>
+                <span class="greeting_letter">E</span>
+                <span class="greeting_letter">S</span>
+
+            </span>
+
+
+            <span class="greeting_word">
+                <span class="greeting_letter">T</span>
+                <span class="greeting_letter">O</span>
+                <span class="greeting_letter">D</span>
+                <span class="greeting_letter">A</span>
+                <span class="greeting_letter">Y</span>
+                <span class="greeting_letter">!</span>
+            </span>
+        </h2>
     </div>
-
-    <div class='aboutSection' style="background-image:url(../static/images/elephant.jpg)" >
-        <div class='container'>
-            <div class='col-md-7'>
-                <div class='infoBox'>
-                    <h2>Never heard of Bucheon, South Korea?</h2>
-                    <h3>Tripadvisor can't give you a tour of Bucheon, South Korea. But these local people can! </h3>
-                    <h3><a class='btn btn-primary btn-lg' href="#signup" role='button'>Sign up</a></h3>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class='aboutSection' style="background-image:url(../static/images/kc.jpg)" >
-        <div class='container'>
-            <div class='col-md-7'>
-                <div class='infoBox'>
-                    <h2>Want to make friends?</h2>
-                    <h3>If you are using Tinder to make friends, stop. Meet real people who wants to be your friends</h3>
-                    <h3><a class='btn btn-primary btn-lg' href="#signup" role='button'>Sign up</a></h3>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class='aboutSection' style="background-image:url(../static/images/elephant.jpg)" >
-        <div class='container'>
-            <div class='col-md-7'>
-                <div class='infoBox'>
-                    <h2>Are you interested in sports? Art? History?</h2>
-                    <h3>Receive a customizable tour from local people from all around the world!</h3>
-                    <h3><a class='btn btn-primary btn-lg' href="#signup" role='button'>Sign up</a></h3>
-                </div>
-            </div>
-        </div>
-    </div>
-
 </div>
+</div>
+
+
+
+<!-- this is where secondary contents start -->
+
+<div class="secondary-contents clearfix">
+
+    <div class="info-box">
+        <div class="arrow-wrapper">
+            <div class="arrow-head-left">&lt</div>
+            <div class="arrow-stem-left"> </div>
+        </div>
+    </div>
+
+
+    <div class="info-box">
+        <div class="info-text">
+            <p class="info-heading">Meet locals</p>
+            <p class="info-content">Have a customzied tours, and explore parts of city that internet can't offer<p>
+        </div>
+    </div>
+</div>
+
+
+<div class="secondary-contents clearfix">
+    <div class="info-box2">
+        <div class="info-text">
+            <p class="info-heading">Meet locals</p>
+            <p class="info-content">Have a customzied tours, and explore parts of city that internet can't offer<p>
+        </div>
+    </div>
+    <div class="info-box2">
+        
+    </div>
+</div>
+
+
+
+
+
 
 {% endblock %}

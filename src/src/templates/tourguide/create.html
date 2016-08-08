@@ -7,7 +7,7 @@
         <!-- This is going to be a panel for profile -->
         <div class='dashboard'>
             <div class="list-group">
-                <a href="/tourist/create/your_tours" class="list-group-item active">Your tours</a>
+                <a href="/tourist/create/your_tours" class="list-group-item">Your tours</a>
                 <a href="/tourist/create/create_tours/inprogress" class="list-group-item">Create tours</a>
             </div>
         </div>
@@ -26,10 +26,19 @@
     </div>
 </div>
 
+
+
 <script>
-$(document).ready(function () {
-        $('.list-group-item"').addClass('active');
+$(document).ready(function() { 
+    $('.list-group-item').click(function() {
+        
+        $(this).parent().children().removeClass("active");
+        if (!$this.hasClass('active')) {
+            $this.addClass('active');
+        }
     });
+
+});
 </script>
 
 {% endblock %}
