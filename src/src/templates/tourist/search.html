@@ -20,26 +20,24 @@
     color: #B56357;
 }
 
-/*This changes font size of placeholder */
-/*search_input,
-input::-webkit-input-placeholder {
-    font-size: 50px;
-    line-height: 2;
-}
-*/
-/*#search_button {
-    position:relative;
-    top:100px;
+
+.drop {
+    /*height: 80px;*/
+    background-color: rgba(39, 44, 44, 0.9); 
+    border:none;
+    text-align: center;
+    width: 100px;
+
+    display: inline-block;
 }
 
-#search_logo {
-    position:relative;
-    top:100px;
-    color: #B56357;
-    background: transparent;
-}*/
+.drop:hover {
+    cursor: pointer;
+}
 
 </style>
+
+
 
 
 <div class="search-page">
@@ -59,8 +57,12 @@ input::-webkit-input-placeholder {
             on 
             <input class="search_input_type" type='text' placeholder='day/month/year'> &nbsp.Oh did I mention?</p>
 
-        <p id="line2">I would <input class="search_input_type" type='text' placeholder='Like to'>
-        meet other tourist. And,</p>
+       <!--  <p id="line2">I would <input class="search_input_type" type='text' placeholder='Like to'/>
+        meet other tourist. And,</p> -->
+
+
+
+        <div id="line2"> <span id="line2-1">I would</span> <div id="target" class="drop Like">Like to</div> <span id="line2-2"> meet other tourist. And, </span></div>
 
         <p id="line3">I will be wearing 
             <input class="search_input_type" type='text' placeholder='Types of shoes'>
@@ -80,6 +82,41 @@ input::-webkit-input-placeholder {
 
 
 </div>
+
+
+
+
+
+
+
+
+
+
+<script>
+
+
+$(".drop").click(function() {
+
+    if($(this).hasClass("Like")) {
+        $(this).text("Not like to");
+        $(this).removeClass("Like");
+    }
+
+    else {
+        $(this).text("Like to");
+        $(this).addClass("Like");
+    }
+});
+
+
+
+
+
+
+</script>
+
+
+
  
 
 {% endblock %}

@@ -322,11 +322,13 @@ a {
 #line2 {
     margin-left: 240px;
     margin-top: 30px;
+   
 }
 
 #line3 {
     margin-top: 35px;
     margin-left: 150px;
+
 }
 
 .search_input_type {
@@ -334,8 +336,36 @@ a {
     border:none;
     text-align: center;
     height: 80px;
+    margin-left: 10px;
+    margin-right: 10px;
 
 }
+
+#line2-1 {
+    height: 50px;
+    width: 80px;
+    float: left;
+    display: inline-block;
+    
+
+}
+
+#line2-2 {
+    height: 50px;
+    margin-left: 20px;
+ 
+    display: inline-block;
+
+}
+
+
+
+
+
+
+
+
+
 
 .search_input_type::-webkit-input-placeholder {
     text-align: center;
@@ -353,7 +383,7 @@ a {
 }
 
 
-
+/* Dropdown Button */
 
 
 /******** FOOTER CSS ******************/
