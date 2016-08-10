@@ -27,12 +27,15 @@
     border:none;
     text-align: center;
     width: 100px;
-
     display: inline-block;
 }
 
 .drop:hover {
     cursor: pointer;
+}
+
+.drop:last-child {
+    width: 200px;
 }
 
 </style>
@@ -57,16 +60,15 @@
             on 
             <input class="search_input_type" type='text' placeholder='day/month/year'> &nbsp.Oh did I mention?</p>
 
-       <!--  <p id="line2">I would <input class="search_input_type" type='text' placeholder='Like to'/>
-        meet other tourist. And,</p> -->
-
 
 
         <div id="line2"> <span id="line2-1">I would</span> <div id="target" class="drop Like">Like to</div> <span id="line2-2"> meet other tourist. And, </span></div>
 
-        <p id="line3">I will be wearing 
-            <input class="search_input_type" type='text' placeholder='Types of shoes'>
-        </p>
+
+        <div id="line3">
+        <p id="line3-1">I will be wearing </p>
+            <div id="shoes_menu" class="drop Like active"><span class='drop-item'>Pick your shoes</span></div>
+        </div>
 
         <button href='/tourist/search/results' id='search_btn' class="btn btn-large" aria-hidden="true" type='submit' >Find Me</button>
     </div>
@@ -95,7 +97,7 @@
 <script>
 
 
-$(".drop").click(function() {
+$("#target").click(function() {
 
     if($(this).hasClass("Like")) {
         $(this).text("Not like to");
@@ -108,6 +110,30 @@ $(".drop").click(function() {
     }
 });
 
+
+//JavaScript function
+
+$(document).on('click', '.drop-item', function () {
+    
+    if($("#shoes_menu").hasClass('active')) {
+        $("#shoes_menu").html("<span id='c1' class='drop-item'>Sandals</span> &nbsp <span class='drop-item'>Regular shoes</span> &nbsp <span class='drop-item'>Gym Shoes</span> &nbsp <span class='drop-item'>Hiking Shoes</span>")
+        $("#shoes_menu").children().css("border","solid 1px white");
+        $("#shoes_menu").children().css("padding","5px");
+        $("#shoes_menu").css("width", "500px");
+        $("#shoes_menu").removeClass("active");
+    }
+
+    else {
+        $
+        var user_choice = $(this).html();
+        var user_choice_html = "<span class='drop-item'>" + user_choice + "</span>";
+        $("#shoes_menu").css("width", "");
+        $("#shoes_menu").html(user_choice_html);
+        $("#shoes_menu").addClass("active");
+        
+    }
+    // your function here
+});
 
 
 
