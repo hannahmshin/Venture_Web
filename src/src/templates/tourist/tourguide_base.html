@@ -12,16 +12,16 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Venture:explore your limit</title>
-        <link rel="icon" href="http://getbootstrap.com/favicon.ico">
-        <link rel="stylesheet" href="http://getbootstrap.com/dist/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="{% static "css/base.css" %}" />
+        <link rel="icon" href="http://getbootstrap.com/favicon.ico"/>
+        <link rel="stylesheet" href="http://getbootstrap.com/dist/css/bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" href="{% static "css/base.css" %}" /></link>
         
     </head>
 
     <body>
         <!-- custom navigation bar -->
 
-        <nav id="navbar" class="clearfix">
+    <nav id="navbar" class="clearfix">
             <a class="navbar-brand-j" href="/tourist/">Venture</a>
             <ul class="navbar-list_j">
                 {% if not user.is_authenticated %}
@@ -38,13 +38,6 @@
             </ul>
         </nav>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-
-    <!-- my temporary Jquery Code lives here -->
-    <script>
-
-
-    </script>
-
 
     {% block body_block %}{% endblock %}
 

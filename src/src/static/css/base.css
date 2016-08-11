@@ -1,8 +1,10 @@
 /** Configuring background color and NAV-BAR ******************/
 
+
+
 body {
-    background-color: black;
-    height: 0%;
+    background-color: #431c5d;
+    
 
 }
 * {
@@ -381,6 +383,8 @@ a {
 
 
 /* Dropdown Button */
+/******** Search Result ******************/
+
 
 
 /******** FOOTER CSS ******************/

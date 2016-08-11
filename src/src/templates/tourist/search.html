@@ -37,7 +37,9 @@
 .drop:last-child {
     width: 200px;
 }
-
+#TESTING {
+    display: none;
+}
 </style>
 
 
@@ -62,12 +64,23 @@
 
 
 
-        <div id="line2"> <span id="line2-1">I would</span> <div id="target" class="drop Like">Like to</div> <span id="line2-2"> meet other tourist. And, </span></div>
+        <div id="line2"> <span id="line2-1">I would</span> 
+
+            <input class="search_input_type" type='text' name='preference' placeholder="Like to" value='{{ request.GET.preference }}'> </input> 
+        <!-- <div id="target" class="drop Like">Like to</div> -->
+
+
+
+         <span id="line2-2">(like to or not like to) meet other tourist. And, </span></div>
 
 
         <div id="line3">
         <p id="line3-1">I will be wearing </p>
-            <div id="shoes_menu" class="drop Like active"><span class='drop-item'>Pick your shoes</span></div>
+            <!-- <div id="shoes_menu" class="drop Like active"><span class='drop-item'>Pick your shoes</span></div> -->
+
+            <input class="search_input_type" type='text' name='preference' placeholder="Sandals" value='{{ request.GET.preference }}'> </input> 
+        <p id="line3-1">(Sandas, Regular Shoes, Gym Shoes, or Hiking shoes) </p>
+
         </div>
 
         <button href='/tourist/search/results' id='search_btn' class="btn btn-large" aria-hidden="true" type='submit' >Find Me</button>

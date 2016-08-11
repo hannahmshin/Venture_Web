@@ -1,0 +1,107 @@
+<!-- explore tour (tourist view) -->
+{% extends "tourist/tourguide_base.html" %}
+{% load urllify %}
+{% load staticfiles %}
+{% block body_block %}
+
+
+<style>
+
+#tourist_tour_view {
+    height: 600px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#profile_image {
+    background-repeat: no-repeat;
+    background-position: 50%;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+}
+
+#explore_with {
+    font-size: 30px;
+}
+
+#user_bio {
+    font-size: 20px;
+    text-align: center;
+    
+}
+
+#tour_desc {
+    font-size: 20px;
+}
+
+</style>
+
+
+
+
+
+{%if object%}
+
+    <div id='tourist_tour_view' style="background-image:url({{ object.image.url }});"></div>
+
+
+    <div class='container-fluid'>
+        <div class='panel panel-default' >
+            
+            <div class='panel-body'>
+                <div class ='col-sm-10'>
+                    <div class='row'>
+                        <div id='explore_with'class='col-sm-6 col-sm-offset-1'>
+                        Explore <strong> {{ object.cityname }} </strong > with <a href="#profile"><img id='profile_image' src="{{ author.profile_picture.url }}"/></a>
+                        </div>
+
+                        <div class='col-sm-5'> <p id='user_bio'>
+                        Hi there! My name is <strong>{{author_user.first_name}},{{author_user.last_name}}</strong>.<br>
+                        Check out my tour and if you like it, shoot me an email!
+                        </div>
+                    </div> <!-- end of the first row -->
+                    <hr>
+
+                    <div class='row'>
+
+                        <div id='explore_with'class='col-sm-8 col-sm-offset-1'>
+                        <strong> Let me tell you about my tour:  </strong>
+                        </div>
+                    </div> <!-- end of the second row -->
+                   
+
+                    <div class='row'>
+                        <div id='tour_desc' class='col-sm-8 col-sm-offset-1'>
+                        {{ object.content}}
+                        </div>
+                    </div> <!-- end of the third row -->
+                    <hr>
+
+
+                    <!-- display stops -->
+                    {% for stop in stops%}
+                    <div class='row'>
+                        <div id='tour_desc' class='col-sm-6 col-sm-offset-1'>
+                        <img src="{{stop.image.url}}" width='500' height='500'>
+                        </div>
+
+                        <div id='tour_desc' class='col-sm-3'>
+                            {{ stop.content }}
+                        </div>
+                    </div> <!-- end of the third row -->
+                    <br>
+                    {% endfor %}
+                    <hr>
+            
+            </div>
+
+        
+        </div>
+    </div>
+    </div>
+
+
+{% endif %}
+
+{% endblock %}
