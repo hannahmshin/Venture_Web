@@ -1,94 +1,343 @@
 /** Configuring background color and NAV-BAR ******************/
 
-
+@import url("http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900");
 
 body {
-    background-color: #431c5d;
+    background-color: white;
+     color: #797e83;
+  font-size: 16px;
+    margin: 0;
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.5; 
     
 
 }
 * {
     box-sizing: border-box;
-    font-family: 'Varela Round', sans-serif;
-}
-
-#navbar .navbar-brand-j{
-    display: inline-block;
-    color: #cdd422;
-    float: left;
-    font-weight: bold;
-    font-size: 3em;
-    padding-top: 2.5rem;
-    padding-bottom: 2.5rem;
-    margin-left: 1em;
-    margin-right: 0;
-    text-decoration: none;
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 
-#navbar .navbar-list_j {
-    display: inline block;
-    float:right;
-    font-size: 1.4rem;
-    padding-top: 4.2rem;
-    padding-bottom: 4.2rem;
-    margin-left: -5px;
-    margin-right: 100px;
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none; 
 }
 
-
-#navbar .navbar-list_j a {
-
-    display: block;
-    color: #cdd422;
-    padding: 10px 5px;
-    text-decoration: none;
-    font-weight: bold;
+a {
+  color: #656a6e;
+  text-decoration: none;
+  font-weight: 400; 
 }
 
-#navbar .navbar-list_j a:hover {
-    color: #c2dde6;
+.nav_container {
+    
+    background-color: white;
+    
+    width: 100%;
+    margin: auto;
     
 }
 
 
-#navbar .navbar-list_j li{
-    display: inline-block;
-    margin: 0;
-   
+
+.main-header,
+.nav {
+    display: flex; 
+    flex-direction: column;
+    
 }
 
-#navbar {
-    position: fixed;
-    top:0;
-    left:0;
-    z-index: 20;
-    background: #431c5d;
-    height: 115px;
-    width: 100%;
-    margin: 0 auto;
-    font-family: 'Varela Round', sans-serif;
-    border-bottom: 4px solid #c2dde6;
+.main-header {
+    padding-top: 1em;
 }
 
-a {
+.site-logo {
+    font-size: 2em;
+    font-weight: bolder;
+    width: 100px;
+    text-align: center;
+    align-self: center;
+}
+
+.site-logo:hover {
     text-decoration: none;
 }
 
+.nav {
+    margin-top: 1.5em;
+}
+
+.nav a {
+    display: block;
+    color: #797E83;
+    font-size:1em;
+    font-weight: 700;
+    text-align: center;
+    padding: .4em;
+    border-bottom: 1px solid #ebecec;
+}
+
+.nav li:hover {
+    background-color: transparent;
+}
+
+.nav a:hover {
+    color: #0b0b0b;
+    border-bottom: 2px solid white;
+}
+
+.nav>li>a:focus, 
+.nav>li>a:hover {
+    background-color: transparent;
+}
 
 
-/** Main greeting page ******************/
 
-.main-image {
-    padding-top: 170px;
-    height: 850px;
+
+
+
+
+.row_grey {
+
+    margin-top: -15px;
+        height: 252px;
+    background-color: #f3f3f3;
+
+}
+.row_white {
+    margin-top: -15px;
+    height: 202px;
+    background-color: #fff;
+
+}
+
+.tall_row_grey {
+    height: 552px;
+    background: linear-gradient(to bottom,  #f3f3f3 0%,#f3f3f3 20%,#fff 20%,#fff 100%);
+   /* background-color: #fff;*/
+}
+
+.inner_wrapper {
+    height: 450px;
+    z-index: 100;
+    background-color: transparent;
+}
+
+
+.slide_image {
+    margin-top: 30px;
+    height: 367px;
+    width: 770px;
+}
+
+.contents_description_slider {
+    margin-top: 160px;
+    color:  #333;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.dots {
+    margin-top: -230px;
+    list-style-type: none;
+}
+
+.slide_dots {
+    height: 10px;
+    width: 10px;
+    float: left;
+    display: block;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: black;
+    margin-right: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+.liquid-content-container {
+    margin-top: 50px;
+}
+
+.liquid-content-container-right {
+    margin-top: 50px;
+}
+
+.spaced_less {
+     letter-spacing: .08em;
+    color: #333;
+    font-weight: normal;
+    line-height: 2em;
+}
+
+.spaced {
+    letter-spacing: .25em;
+    color: #333;
+    font-weight: bold;
+}
+
+
+
+
+
+@media (min-width:769px) {
+
+    .main-image {
+    height: 350px;
     background: 
-        linear-gradient(#bccbde, transparent 90%),
+    
         url('../images/IMG_1337.jpg');
     background-size: cover;
     border-bottom: 4px solid #c2dde6;
     
+    }
+
+    .main-header {
+        height:200px;
+        justify-content: flex-end;
+    }
+    
+    .site-logo {
+        width: 100px;
+    }
+    
+    .nav {
+        margin-top: 3em;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .nav a {
+        border-bottom-color: transparent;
+    }
+
+    .nav a:hover {
+    color: #0b0b0b;
+    border-bottom: 2px solid white;
 }
+
+    .nav>li>a {
+        padding-top: 7px;
+        padding-bottom: 40px;
+    }
+
+    .greeting_word:first-child {
+    
+        margin-left: 70px;
+        margin-bottom: 50px;
+        width: 25%;
+    }
+
+.greeting_word:nth-child(2) {
+   
+    margin-bottom: 50px;
+    margin-left: 70px;
+    width: 30%;
+}
+
+.greeting_word:nth-child(3) {
+    
+    margin-left: 70px;
+    width: 25%;
+}
+
+.greeting_letter {
+    padding-top: .2em;
+}
+
+
+}
+
+
+
+
+
+
+
+@media (min-width:1025px) {
+    
+    .nav_container {
+    height: 100px;
+    position: fixed;
+    z-index: 100;
+}
+
+    .main-header {
+        height: 80px;
+        flex-direction: row;
+    }
+    .site-logo {
+        margin-right: auto;
+        margin-left: 40px;
+    }
+    .nav {
+        align-self: center;
+        margin-top: 0;
+    }
+    .nav li {
+        margin-left: .65em;
+        margin-right: .65em;
+    
+        letter-spacing: .26px;
+        text-align: center;
+       
+        align-self:center;
+    }
+
+    .nav>li>a {
+        padding-top: 67px;
+    padding-bottom: 40px;
+    }
+
+    .nav a:hover {
+    color: #0b0b0b;
+    border-bottom: 2px solid white;
+}
+
+    .main-image {
+    height: 350px;
+    background: 
+    
+        url('../images/IMG_1337.jpg');
+    background-size: cover;
+    border-bottom: 4px solid #c2dde6;
+    
+    }
+
+    .greeting_word:first-child {
+    padding-left: 100px;
+    margin-bottom: 50px;
+    width: 30%;
+}
+
+.greeting_word:nth-child(2) {
+    padding-left: 160px;
+    margin-bottom: 50px;
+    width: 50%;
+}
+
+.greeting_word:nth-child(3) {
+    padding-left: 130px;
+    width: 25%;
+}
+
+.greeting_letter {
+    padding-top: .2em;
+}
+
+}
+/** Main greeting page ******************/
+
 
 
 .main-greeting {
@@ -97,12 +346,12 @@ a {
 .greeting_word {
     background: black;
     display: block;
-    height: 100px;
+    height: 1.5em;
     font-weight: bold;
     font-family: 'Varela Round', sans-serif;
 }
 .greeting_letter {
-    font-size: 3.5em;
+    font-size: 1em;
     color: azure;
     display: inline-block;
     transition:0.4s ease-in-out;
@@ -159,23 +408,6 @@ a {
 
 .greeting_word .greeting_letter:hover {
     -webkit-animation: bounce 1500ms ease-in-out;
-}
-
-.greeting_word:first-child {
-    padding-left: 100px;
-    margin-bottom: 50px;
-    width: 60%;
-}
-
-.greeting_word:nth-child(2) {
-    padding-left: 160px;
-    margin-bottom: 50px;
-    width: 80%;
-}
-
-.greeting_word:nth-child(3) {
-    padding-left: 130px;
-    width: 55%;
 }
 
 .secondary-contents {
