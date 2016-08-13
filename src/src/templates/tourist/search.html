@@ -46,57 +46,88 @@
 
 
 <div class="search-page">
-    <div class='search-heading'>
-        <p id="custom-heading"> Hey there, ready for a tour? </span>
-        <div id="custom-bottom-border"> </div>
+    <div class='main-image-search'>
+        <h4 class='search-main-heading spaced'> Hey there, ready for your tour? </h4>
     </div>
 
-
-
-<!-- Try to make my own custom dropdown menu!! with Aweseom colors -->
-<form method='GET' action='/tourist/search/'>
-    <div class='search-body'>
-        <p id="line1">I want to explore 
-            <input class="search_input_type" type='text' name='q' placeholder="cityname" value='{{ request.GET.q }}'> </input> 
-
-            on 
-            <input class="search_input_type" type='text' placeholder='day/month/year'> &nbsp.Oh did I mention?</p>
-
-
-
-        <div id="line2"> <span id="line2-1">I would</span> 
-
-            <input class="search_input_type" type='text' name='preference' placeholder="Like to" value='{{ request.GET.preference }}'> </input> 
-        <!-- <div id="target" class="drop Like">Like to</div> -->
-
-
-
-         <span id="line2-2">(like to or not like to) meet other tourist. And, </span></div>
-
-
-        <div id="line3">
-        <p id="line3-1">I will be wearing </p>
-            <!-- <div id="shoes_menu" class="drop Like active"><span class='drop-item'>Pick your shoes</span></div> -->
-
-            <input class="search_input_type" type='text' name='preference' placeholder="Sandals" value='{{ request.GET.preference }}'> </input> 
-        <p id="line3-1">(Sandas, Regular Shoes, Gym Shoes, or Hiking shoes) </p>
-
-        </div>
-
-        <button href='/tourist/search/results' id='search_btn' class="btn btn-large" aria-hidden="true" type='submit' >Find Me</button>
-    </div>
-
-</form>
-
-
-
-        <!-- <form method='GET' action='/tourist/search/'>
-            <input id='search_input' type='text' name='q' placeholder='Explore a city' value='{{ request.GET.q }}'/>
-            <button href='/tourist/search/results'id='search_logo' class="glyphicon glyphicon-search btn btn-large" aria-hidden="true" type='submit' ></button>
-        </form> -->
 
 
 </div>
+
+
+<div class="search-body-container">
+<!-- Try to make my own custom dropdown menu!! with Aweseom colors -->
+    <form method='GET' action='/tourist/search/'>
+    
+        <h4 id="search_heading" class="spaced"> SEARCH TOURS. </h4>
+
+
+        <p id="line1">I want to explore 
+            <input class="search_input_type" type='text' name='q' placeholder="Cityname" value='{{ request.GET.q }}'> </input> 
+
+            on 
+            <input class="search_input_type" type='text' placeholder='Day/Month/Year'> &nbsp.Oh did I mention?</p>
+
+
+
+        <p id="line2">I would
+
+            <input class="search_input_type" type='text' name='preference' placeholder="Like to" value='{{ request.GET.preference }}'> </input> 
+        <!-- <div id="target" class="drop Like">Like to</div> -->
+         (like to or not like to) meet other tourist. And, 
+         </p>
+
+        <p id="line3"> I will be wearing 
+            <!-- <div id="shoes_menu" class="drop Like active"><span class='drop-item'>Pick your shoes</span></div> -->
+
+            <input class="search_input_type" type='text' name='preference' placeholder="Sandals" value='{{ request.GET.preference }}'> </input> 
+        (Sandas, Regular Shoes, Gym Shoes, or Hiking shoes) 
+
+        </p>
+
+        <button href='/tourist/search/results' id='search_btn' class="btn btn-large" aria-hidden="true" type='submit' >Submit</button>
+    </form>
+
+    <!-- List of Popular Tours on Carousel effects -->
+    <!-- Image will appear soomthly and stay for three seconds, and different tours will appear -->
+    <div class="popular-tours">
+        <div class="col-sm-2">
+            POPULAR TOUR IMAGE
+
+            Image will appear soomthly and stay for three seconds, and different tours will appear
+        </div>
+
+        <div class="col-sm-2">
+            Popular tour decsiprtion
+        </div>
+
+        <div class="col-sm-2">
+            POPULAR TOUR IMAGE
+        </div>
+
+        <div class="col-sm-2">
+            Popular tour decsiprtion
+        </div>
+
+        <div class="col-sm-2">
+            POPULAR TOUR IMAGE
+        </div>
+
+        <div class="col-sm-2">
+            Popular tour decsiprtion
+        </div>
+
+    </div>
+
+
+
+
+
+
+</div> <!-- end of search body container-->
+
+
+
 
 
 

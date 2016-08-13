@@ -61,6 +61,7 @@
                 <h4 class='spaced_less'>Venture is an online community of people around the world who like adventures, meeting new people from different parts of the world, and discovering uncharted parts of the world. </h4>
 
                 <p class='spaced'><strong>+</strong> Discover more </p>
+                <!-- http://jsfiddle.net/ThinkingStiff/EVyE8/   USE THIS CODE FOR THE DESIRED EFFECTS -->
             </div>
         </div>
     </div>
@@ -82,8 +83,18 @@
                     <p></p>
                     <div class="contents_description_slider">
                         <div class="words_description">
-                            "You can sign up for your custom tours. You can also decide to do a tour with other tourist. This way you can meet other tourist, and get to know what they like about the city. Also you will be able to meet the local tourguides."
+                            "You will received a guided tour by a local tourguide. Local tourguides are people like you! Local tour guides have been living in the city for a while, and they can take you to places that Google or Tripadvisor can't take you. You don't need to plan to have an awesome trip!"
                         </div>
+
+                        <div class="words_description">
+                            "You can also decide to have a tour with other tourists in town. Meet other tourist from all around the world. Meet not only the local tourguides but also tourist from different parts of the world. You will make great friends!"
+                        </div>
+
+                        <div class="words_description">
+                            "Interested in arts? history? sports? outdoor activities? You can custom search your tour and receive a tour with themes. If you like Art, search with Art filter. It is very likely that your local tourguide will take you to all the art museums in the area!"
+                        </div>
+
+
 
                         <ul class="dots">
                             <li class="slide_dots"></li>
@@ -98,104 +109,88 @@
 
 
     </div>
-
-
-
-    <div class="row_grey">
-
-
-    </div>
-
-
-    <div class="row_white">
-
-
-    </div>
 </div>
 
-
-
-
-
-
-
-
-
-
-<!-- this is where secondary contents start -->
-<!-- 
-<div class="secondary-contents clearfix">
- 
-    <div class="info-box">
-        
-        <button id="left_arrow" class="glyphicon glyphicon-chevron-left btn btn-large" aria-hidden="true"></button>
-        <button id="right_arrow" class="glyphicon glyphicon-chevron-right btn btn-large" aria-hidden="true"></button>
-    </div>
-
-
-    <div class="info-box">
-        <div class="info-text">
-            <p class="info-heading">Meet locals</p>
-            <p class="info-content">Have a customzied tours, and explore parts of city that internet can't offer<p>
+<div id="row_grey_second">
+        <div class="stories">
+            <div class="col-md-8 col-md-offset-1">
+                <div class="sotries-container">
+                    <h4 class='spaced'>WHAT PEOPLE ARE SAYING ABOUT THEIR TOURS</h4>
+                </div>
+            </div>
         </div>
-    </div>
+
+
+
+        <!-- User Story -->
+
+        <div class="user-story">
+
+            <div class="col-md-4 col-md-offset-1 user-image">
+                <img src = "/static/images/user1.jpg" class="user_experience_pic" />
+            </div>
+
+            <div class="col-md-6">
+                <h4 class='spaced_less'>
+                "Hi my name is Jun. L’état du quatrième pompier, dont les brûlures étaient moins graves que celles des trois autres, a connu une « évolution favorable », a ajouté Jérôme Bonnafoux, « qui devrait permettre très bientôt son transfert de l’unité de surveillance continue vers un service d’hospitalisation classique pour poursuivre les soins"
+                </h4>
+            </div>
+
+        </div>
+
+        <div class="user-story">
+
+            <div class="col-md-4 col-md-offset-1 user-image">
+                <img src = "/static/images/user2.jpg" class="user_experience_pic" />
+            </div>
+
+            <div class="col-md-6">
+                <h4 class='spaced_less'>
+                "Hi my name is Mark. L’état du quatrième pompier, dont les brûlures étaient moins graves que celles des trois autres, a connu une « évolution favorable », a ajouté Jérôme Bonnafoux, « qui devrait permettre très bientôt son transfert de l’unité de surveillance continue vers un service d’hospitalisation classique pour poursuivre les soins"
+                </h4>
+            </div>
+
+        </div>
 </div>
 
-
-<div class="secondary-contents clearfix">
-    <div class="info-box2">
-        <div class="info-text">
-            <p class="info-heading">Meet locals</p>
-            <p class="info-content">Have a customzied tours, and explore parts of city that internet can't offer<p>
-        </div>
-    </div>
-    <div class="info-box2">
-        <button id="left_arrow" class="glyphicon glyphicon-chevron-left btn btn-large" aria-hidden="true"></button>
-        <button id="right_arrow" class="glyphicon glyphicon-chevron-right btn btn-large" aria-hidden="true"></button>
-    </div>
-</div> -->
 
 
 <script>
 
-//Variables: change picture variables later
-// var insert_image = "<li><img /></li>";
-// var pic1 = "/static/images/IMG_1755.jpg";
-// var pic2 = "/static/images/IMG_0199.jpg"; 
-// var pic3 = "/static/images/IMG_1678.jpg"; 
-// var pics = [pic1, pic2, pic3];
 
-// //Add pictures
-// for(var i = 0; i < pics.length; ++i) {
-//     $(".content").append('<li><img src="' + pic1 + '"/></li>');
-// };
+//Scripts for changing text box
 
+var slide_index = 0;
 
+$(document).ready(function carousel() {
 
+    //text_slides hold three variables
+    var text_slides = document.getElementsByClassName("words_description");
+    var dot_slides = document.getElementsByClassName("slide_dots")
+    //first display nothing
+    for (var i = 0; i < text_slides.length; i++) {
+        text_slides[i].style.display = "none";
+        dot_slides[i].style.background = "white"
+    }
 
+    slide_index++;
+    if (slide_index > text_slides.length) {slide_index = 1} 
+    text_slides[slide_index-1].style.display = "block"; 
+    dot_slides[slide_index-1].style.background = "black";
 
-
-//Simple scripts for changing the color of button when pressed/unpressed
-$("#left_arrow").mousedown(function() {
-    //change the color
-    $(this).css("color","black");
+    setTimeout(carousel, 6000); // Change image every 2 seconds
 
 });
 
-$("#left_arrow").mouseup(function() {
-    //change the color
-    $(this).css("color","#bccbde");
-});
 
-$("#right_arrow").mousedown(function() {
-    //change the color
-    $(this).css("color","black");
-});
 
-$("#right_arrow").mouseup(function() {
-    //change the color
-    $(this).css("color","#bccbde");
-});
+
+
+
+
+
+
+
 
 
 </script>
