@@ -381,6 +381,15 @@ a {
         background-size: cover;
     }
 
+    .main-image-create {
+        position: relative;
+        margin-top: -10px;
+        height: 250px;
+        background: url('../images/pebbles.jpg');
+        background-size: cover;
+    }
+
+
 
 
 
@@ -649,11 +658,6 @@ a {
     background-color: black;
 }
 
-
-
-
-
-
 .search-body {
 
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
@@ -661,12 +665,6 @@ a {
     color: #cdd422;
     font-size: 1.2em;
 }
-
-
-
-
-
-
 
 
 #custom-bottom-border {
@@ -733,8 +731,76 @@ a {
 }
 
 
-/* Dropdown Button */
-/******** Search Result ******************/
+/******* SEARCH PAGES EARCH PAGE SEARCH PAGE*******/
+/******* SEARCH PAGES EARCH PAGE SEARCH PAGE*******/
+/******* SEARCH PAGES EARCH PAGE SEARCH PAGE*******/
+/******* SEARCH PAGES EARCH PAGE SEARCH PAGE*******/
+/******* SEARCH PAGES EARCH PAGE SEARCH PAGE*******/
+/******* SEARCH PAGES EARCH PAGE SEARCH PAGE*******/
+/******* SEARCH PAGES EARCH PAGE SEARCH PAGE*******/
+/******* SEARCH PAGES EARCH PAGE SEARCH PAGE*******/
+
+
+
+
+
+
+
+
+
+
+
+
+
+/******* CREATE PAGES CREATE PAGE CREATE PAGE*******/
+/******* CREATE PAGES CREATE PAGE CREATE PAGE*******/
+/******* CREATE PAGES CREATE PAGE CREATE PAGE*******/
+/******* CREATE PAGES CREATE PAGE CREATE PAGE*******/
+/******* CREATE PAGES CREATE PAGE CREATE PAGE*******/
+/******* SEARCH PAGES CREATE PAGE CREATE PAGE*******/
+/******* CREATE PAGES CREATE PAGE CREATE PAGE*******/
+/******* CREATE PAGES CREATE PAGE CREATE PAGE*******/
+
+
+.search-page-create {
+    /*background: linear-gradient(to bottom,  #f3f3f3 0%,#f3f3f3 80%,#fff 80%,#fff 100%);*/
+    width: 100%;
+    padding-top: 100px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    height: 400px;
+    line-height: 4em;
+    background: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -746,44 +812,39 @@ a {
     background-color: #222;
 }
 
-hr {
-
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
-    padding: 0; 
-}
-
 .footer-first-row {
-    height: 80px;
-    width: 80%;
-    margin-right: auto;
+
     margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+    height: 100px;
+    display: flex;
+    justify-content:center;
+    align-items:center;
 
 }
 
 .footer-second-row {
-    width: 80%;
+    width: 53%;
     margin-right: auto;
     margin-left: auto;
 }
 .footer-menu-item {
-    margin-top: 0px;
-    padding-top: 50px;
+    width: 75%;
+    padding-bottom: 20px;
+    display: flex;
+    border-bottom: 1px white solid;
+    justify-content:space-around;
+    align-items:center;
     
 }
 
 
-.footer-menu-item li {
-    margin-right: 20px;
-    margin-bottom: 20px;
-    display: inline;
-    text-align: center;
+.footer-menu-item li a:hover {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
 }
-
-
 
 
 
@@ -929,10 +990,6 @@ html, body {
     position: relative;
     background: #EFEFEF;
 }
-.container-fluid {
-    padding-top: 102px;
-}
-
 
 
 

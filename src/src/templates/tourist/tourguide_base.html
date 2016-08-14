@@ -26,15 +26,15 @@
             
             <ul class="nav">
                 {% if not user.is_authenticated %}
-                    <li><a href="{% url 'registration_register' %}">Sign Up</a></li>
+                    <li><a class="nav-item" href="{% url 'registration_register' %}">Sign Up</a></li>
                     <li><a href="{% url 'auth_login' %}">Log In</a></li>
                     <!-- if user is authenticated -->
                 {% else %}
-                    <li><a href="/tourist/search">SEARCH</a></li>
-                    <li><a href="/tourist/create/your_tours/">CREATE</a></li>
-                    <li><a href="/tourist/mypage">PROFILE</a></li>
-                    <li><a href="/tourist/profile">ACCOUNT</a></li>
-                    <li><a href="{% url 'auth_logout' %}?next=/tourist/">LOGOUT</a></li>
+                    <li><a class="nav-item" href="/tourist/search">SEARCH</a></li>
+                    <li><a class="nav-item" href="/tourist/create/your_tours/">CREATE</a></li>
+                    <li><a class="nav-item" href="/tourist/mypage">PROFILE</a></li>
+                    <li><a class="nav-item" href="/tourist/profile">ACCOUNT</a></li>
+                    <li><a class="nav-item" href="{% url 'auth_logout' %}?next=/tourist/">LOGOUT</a></li>
                 {% endif %}
             </ul>
         </header>
@@ -50,14 +50,15 @@
         <div id='footer-container'>
             <div class="footer-first-row">
                 <ul class="footer-menu-item">
-                    <li>HOME</li>
-                    <li>SEARCH</li>
-                    <li>CREATE</li>
-                    <li>PROFILE</li>
-                    <li>ACCOUNT</li>
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#">SEARCH</a></li>
+                    <li><a href="#">CREATE</a></li>
+                    <li><a href="#">PROFILE</a></li>
+                    <li id="for-flush"><a href="#">ACCOUNT</a></li>
+                    <li><a href="#">LOG OUT</a></li>
                 </ul>
             </div>
-            <hr>
+     
 
             <div class="footer-second-row" width:"50%">
                 <p>@2016 Venture Technologies designed by Jun Kim</p>
@@ -72,6 +73,32 @@
 
 </body>
         <!-- This is javascript when button is clicked and the button will stay highlihted -->
+        <script>
+        // $(document).ready(function() {
+
+
+
+
+        //     $(".nav-item").click(function() {
+        //         $(this).addClass("active_menu");
+        //         $(this).css({"color": "#0b0b0b", "border-bottom": "2px solid white"});
+        //     });
+
+        //     var menu_items = $(".nav-item");
+        // });
+
+
+        </script>
+
+
+
+
+
+
+
+
+
+
 
      <!-- Necessary Javascript, and jquery stuff -->
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
